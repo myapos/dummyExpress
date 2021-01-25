@@ -234,7 +234,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Active",
+      Status: "Inactive",
     },
     {
       ID: 3,
@@ -244,7 +244,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Active",
+      Status: "Inactive",
     },
     {
       ID: 4,
@@ -272,7 +272,7 @@ app.get('/api/snapshotsqueue', (req,res) => {
     },
     {
       ID: 2,
-      Cluster: "Na8564-Wave",
+      Cluster: "Na8565-Wave",
       Region: " Europe-Denmark",
       Vm: "VM-Nathan",
       TimeToComplete: "20 minutes left",
@@ -280,7 +280,7 @@ app.get('/api/snapshotsqueue', (req,res) => {
     },
     {
       ID: 3,
-      Cluster: "Na8564-Wave",
+      Cluster: "Na8566-Wave",
       Region: " Europe-Denmark",
       Vm: "VM-Nathan",
       TimeToComplete: "20 minutes left",
@@ -288,7 +288,7 @@ app.get('/api/snapshotsqueue', (req,res) => {
     },
     {
       ID: 4,
-      Cluster: "Na8564-Wave",
+      Cluster: "Na8567-Wave",
       Region: " Europe-Denmark",
       Vm: "VM-Nathan",
       TimeToComplete: "20 minutes left",
