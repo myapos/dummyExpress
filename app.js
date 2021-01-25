@@ -2,6 +2,15 @@ const express = require('express')
 const app = express()
 const port = 8999
 
+app.get('/api/clusters' , (req, res) => {
+  res.status(200).json([
+    {
+      id: 1,
+      name: 'node-john'
+    }
+  ])
+})
+
 app.use('/api/login', (req, res) => {
     // res.setHeader('Content-Type', 'application/json');
 
@@ -14,7 +23,7 @@ app.use('/api/login', (req, res) => {
         username:"test",
         role:"admin",
         company:"sunlight",
-        page_access: ['Users', 'Settings', 'Dashboard', 'About', 'Templates', 'Snapshots'],
+        page_access: ['Users', 'Settings', 'Dashboard', 'About', 'Templates', 'Snapshots', 'Clusters'],
         phone:"",
         birthday:"",
         token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjF9.Vcp2grZ53t_OG3jwSXsRwfc_UUjboNgZarkAGiX0jgM",
@@ -324,13 +333,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -374,13 +383,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -424,13 +433,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -474,13 +483,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -538,7 +547,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -582,13 +591,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -632,13 +641,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -682,13 +691,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -732,13 +741,13 @@ app.get('/saus/testNewCall', (req,res) => {
         "site_admin": false
       },
       "labels": [
-        
+
       ],
       "state": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
-        
+
       ],
       "milestone": null,
       "comments": 0,
@@ -750,7 +759,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "body": "Test description for SUbmit btn not clickable",
       "performed_via_github_app": null
     }
-  ]) 
+  ])
 })
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
