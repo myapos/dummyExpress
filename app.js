@@ -6,10 +6,128 @@ app.get('/api/clusters' , (req, res) => {
   res.status(200).json([
     {
       id: 1,
-      name: 'node-john'
-    }
+      name: "Node-1212",
+      provider: "AWS",
+      state: "active",
+      region: "Europe-Frankfurt",
+      type: "local",
+    },
+    {
+      id: 2,
+      name: "Node-1213",
+      provider: "AWS",
+      state: "failed",
+      region: "Europe-Stockholm",
+      type: "local",
+    },
+    {
+      id: 3,
+      name: "Node-121123",
+      provider: "AWS",
+      state: "inactive",
+      region: "Asia-Beijing",
+      type: "cloud",
+    },
+    {
+      id: 4,
+      name: "Node-12132",
+      provider: "AWS",
+      state: "inactive",
+      region: "Asia-Seoul",
+      type: "cloud",
+    },
   ])
 })
+
+app.get('/api/templates' , (req, res) => {
+  res.status(200).json([
+      {
+        ID: 1,
+        Name: "Tem965-522346",
+        Num_Of_Backups: 2,
+        Cores: 5,
+        Memory: "32 MB",
+        OS: "Linux",
+        Backups: [
+          {
+            Bakcup: "BK99029",
+            Date: " July 15 2020,20:56",
+            Backup_Size: "640 MB",
+            ID: 1,
+          },
+          {
+            Bakcup: "BK9988wi",
+            Date: " July 14 2020,20:56",
+            Backup_Size: "325 MB",
+            ID: 2,
+          },
+        ],
+      },
+      {
+        ID: 2,
+        Name: "Tem965-577",
+        Num_Of_Backups: 4,
+        Cores: 6,
+        Memory: "32 MB",
+        OS: "Linux",
+        Backups: [
+          {
+            Bakcup: "BK99029",
+            Date: " July 15 2020,20:56",
+            Backup_Size: "640 MB",
+            ID: 3,
+          },
+          {
+            Bakcup: "BK9988wi",
+            Date: " July 14 2020,20:56",
+            Backup_Size: "325 MB",
+            ID: 4,
+          },
+          {
+            Bakcup: "BK9988wjk",
+            Date: " July 12 2020,20:56",
+            Backup_Size: "125 MB",
+            ID: 5,
+          },
+          {
+            Bakcup: "BK9988kl",
+            Date: " July 10 2020,20:56",
+            Backup_Size: "100 MB",
+            ID: 6,
+          },
+        ],
+      },
+      {
+        ID: 3,
+        Name: "Tem965-578",
+        Num_Of_Backups: 3,
+        Cores: 6,
+        Memory: "32 MB",
+        OS: "Linux",
+        Backups: [
+          {
+            Bakcup: "BK9902xv",
+            Date: " July 10 2020,20:56",
+            Backup_Size: "640 MB",
+            ID: 7,
+          },
+          {
+            Bakcup: "BK9988vd",
+            Date: " July 11 2020,20:56",
+            Backup_Size: "325 MB",
+            ID: 8,
+          },
+          {
+            Bakcup: "BK9988wjk",
+            Date: " July 9 2020,20:56",
+            Backup_Size: "125 MB",
+            ID: 9,
+          },
+        ],
+      }
+  ])
+})
+
 
 app.use('/api/login', (req, res) => {
     // res.setHeader('Content-Type', 'application/json');
