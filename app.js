@@ -47,7 +47,7 @@ app.get('/api/templates' , (req, res) => {
         Num_Of_Backups: 2,
         Cores: 5,
         Memory: "32 MB",
-        OS: "Linux",
+        os: "Linux",
         Backups: [
           {
             Bakcup: "BK99029",
@@ -69,7 +69,7 @@ app.get('/api/templates' , (req, res) => {
         Num_Of_Backups: 4,
         Cores: 6,
         Memory: "32 MB",
-        OS: "Linux",
+        os: "Linux",
         Backups: [
           {
             Bakcup: "BK99029",
@@ -103,7 +103,7 @@ app.get('/api/templates' , (req, res) => {
         Num_Of_Backups: 3,
         Cores: 6,
         Memory: "32 MB",
-        OS: "Linux",
+        os: "Linux",
         Backups: [
           {
             Bakcup: "BK9902xv",
@@ -128,6 +128,101 @@ app.get('/api/templates' , (req, res) => {
   ])
 })
 
+app.get('/api/resource_groups' , (req, res) => {
+  res.status(200).json([
+    {
+    "id":1,
+    "name": "name_1",
+    "cores_total":20,
+    "cores_used":5,
+    "memory_total":32000,
+    "memory_used":4000,
+    "storage_total":160000,
+    "storage_used":80000,
+    "is_storage_latency_optimized":true,
+    "is_cpu_pinning_enabled":true,
+    "is_reserved":false,
+    "vms":[{
+        "id": 1,
+        "name": 'Lykos',
+        "status": 'Active',
+        "os": "Linux",
+        "elastic_ip": "192.168.1.1"
+      },
+      {
+        "id": 2,
+        "name": 'Lykos_2',
+        "status": 'Active',
+        "os": "Linux",
+        "elastic_ip": "192.168.2.1"
+      }
+    ],
+    "totalVMs": 10,
+    "cluster_id":1
+  },
+  {
+    "id":2,
+    "name": "name_2",
+    "cores_total":25,
+    "cores_used":7,
+    "memory_total":32000,
+    "memory_used":4000,
+    "storage_total":160000,
+    "storage_used":80000,
+    "is_storage_latency_optimized":false,
+    "is_cpu_pinning_enabled":false,
+    "is_reserved":false,
+    "vms":[{
+      "id": 1,
+      "name": 'Lykos',
+      "status": 'Active',
+      "os": "Linux",
+      "elastic_ip": "192.168.1.1"
+      },
+      {
+        "id": 2,
+        "name": 'Lykos_2',
+        "status": 'Active',
+        "os": "Linux",
+        "elastic_ip": "192.168.2.1"
+      }
+    ],
+    "totalVMs": 10,
+    "cluster_id":2
+  },
+  {
+    "id":3,
+    "name": "name_3",
+    "cores_total":30,
+    "cores_used":10,
+    "memory_total":32000,
+    "memory_used":4000,
+    "storage_total":160000,
+    "storage_used":80000,
+    "is_storage_latency_optimized":false,
+    "is_cpu_pinning_enabled":false,
+    "is_reserved":false,
+    "vms":[{
+      "id": 1,
+      "name": 'Lykos',
+      "status": 'Active',
+      "os": "Linux",
+      "elastic_ip": "192.168.1.1"
+      },
+      {
+        "id": 3,
+        "name": 'Lykos_3',
+        "status": 'Active',
+        "os": "Linux",
+        "elastic_ip": "192.168.2.1"
+      }
+    ],
+    "totalVMs": 10,
+    "cluster_id":2
+  }
+])
+})
+
 
 app.use('/api/login', (req, res) => {
     // res.setHeader('Content-Type', 'application/json');
@@ -141,7 +236,7 @@ app.use('/api/login', (req, res) => {
         username:"test",
         role:"admin",
         company:"sunlight",
-        page_access: ['Users', 'Settings', 'Dashboard', 'About', 'Templates', 'Snapshots', 'Clusters'],
+        page_access: ['Users', 'Settings', 'Dashboard', 'About', 'Templates', 'Snapshots', 'Clusters', 'Infrastructure', 'ResourceGroups'],
         phone:"",
         birthday:"",
         token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjF9.Vcp2grZ53t_OG3jwSXsRwfc_UUjboNgZarkAGiX0jgM",
@@ -342,7 +437,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "600MB",
       Frequency: "Daily",
-      Status: "Active",
+      status: "Active",
     },
     {
       ID: 2,
@@ -352,7 +447,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Inactive",
+      status: "Inactive",
     },
     {
       ID: 3,
@@ -362,7 +457,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Inactive",
+      status: "Inactive",
     },
     {
       ID: 4,
@@ -372,7 +467,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Active",
+      status: "Active",
     },
   ])
 })
