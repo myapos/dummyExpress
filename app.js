@@ -47,7 +47,7 @@ app.get('/api/templates' , (req, res) => {
         Num_Of_Backups: 2,
         Cores: 5,
         Memory: "32 MB",
-        os: "Linux",
+        OS: "Linux",
         Backups: [
           {
             Bakcup: "BK99029",
@@ -69,7 +69,7 @@ app.get('/api/templates' , (req, res) => {
         Num_Of_Backups: 4,
         Cores: 6,
         Memory: "32 MB",
-        os: "Linux",
+        OS: "Linux",
         Backups: [
           {
             Bakcup: "BK99029",
@@ -103,7 +103,7 @@ app.get('/api/templates' , (req, res) => {
         Num_Of_Backups: 3,
         Cores: 6,
         Memory: "32 MB",
-        os: "Linux",
+        OS: "Linux",
         Backups: [
           {
             Bakcup: "BK9902xv",
@@ -437,7 +437,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "600MB",
       Frequency: "Daily",
-      status: "Active",
+      Status: "Active",
     },
     {
       ID: 2,
@@ -447,7 +447,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      status: "Inactive",
+      Status: "Inactive",
     },
     {
       ID: 3,
@@ -457,7 +457,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      status: "Inactive",
+      Status: "Inactive",
     },
     {
       ID: 4,
@@ -467,7 +467,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      status: "Active",
+      Status: "Active",
     },
   ])
 })
