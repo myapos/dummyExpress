@@ -8,7 +8,7 @@ app.get('/api/clusters' , (req, res) => {
       id: 1,
       name: "Node-1212",
       provider: "AWS",
-      state: "active",
+      status: "Enabled",
       region: "Europe-Frankfurt",
       type: "local",
     },
@@ -16,7 +16,7 @@ app.get('/api/clusters' , (req, res) => {
       id: 2,
       name: "Node-1213",
       provider: "AWS",
-      state: "failed",
+      status: "Disabled",
       region: "Europe-Stockholm",
       type: "local",
     },
@@ -24,7 +24,7 @@ app.get('/api/clusters' , (req, res) => {
       id: 3,
       name: "Node-121123",
       provider: "AWS",
-      state: "inactive",
+      status: "Disabled",
       region: "Asia-Beijing",
       type: "cloud",
     },
@@ -32,7 +32,23 @@ app.get('/api/clusters' , (req, res) => {
       id: 4,
       name: "Node-12132",
       provider: "AWS",
-      state: "inactive",
+      status: "Disabled",
+      region: "Asia-Seoul",
+      type: "cloud",
+    },
+    {
+      id: 5,
+      name: "Node-12132",
+      provider: "Sunlight",
+      status: "Disabled",
+      region: "Asia-Seoul",
+      type: "cloud",
+    },
+    {
+      id: 6,
+      name: "Node-12132",
+      provider: "Sunlight",
+      status: "Enabled",
       region: "Asia-Seoul",
       type: "cloud",
     },
@@ -145,14 +161,14 @@ app.get('/api/resource_groups' , (req, res) => {
     "vms":[{
         "id": 1,
         "name": 'Lykos',
-        "status": 'Active',
+        "status": 'Enabled',
         "os": "Linux",
         "elastic_ip": "192.168.1.1"
       },
       {
         "id": 2,
         "name": 'Lykos_2',
-        "status": 'Active',
+        "status": 'Enabled',
         "os": "Linux",
         "elastic_ip": "192.168.2.1"
       }
@@ -175,14 +191,14 @@ app.get('/api/resource_groups' , (req, res) => {
     "vms":[{
       "id": 1,
       "name": 'Lykos',
-      "status": 'Active',
+      "status": 'Enabled',
       "os": "Linux",
       "elastic_ip": "192.168.1.1"
       },
       {
         "id": 2,
         "name": 'Lykos_2',
-        "status": 'Active',
+        "status": 'Enabled',
         "os": "Linux",
         "elastic_ip": "192.168.2.1"
       }
@@ -205,14 +221,14 @@ app.get('/api/resource_groups' , (req, res) => {
     "vms":[{
       "id": 1,
       "name": 'Lykos',
-      "status": 'Active',
+      "status": 'Enabled',
       "os": "Linux",
       "elastic_ip": "192.168.1.1"
       },
       {
         "id": 3,
         "name": 'Lykos_3',
-        "status": 'Active',
+        "status": 'Enabled',
         "os": "Linux",
         "elastic_ip": "192.168.2.1"
       }
@@ -257,41 +273,6 @@ app.use('/api/login', (req, res) => {
   // })
 
 })
-
-/*  initialState: {
-        users: {
-          users: [
-            {
-              ID: 1,
-              CreatedAt: "2020-09-22T09:34:15+01:00",
-              UpdatedAt: "2020-09-22T09:37:40+01:00",
-              DeletedAt: null,
-              username: "usr1",
-              password: "dummyPswd",
-              email: "test@test.com",
-              role: "admin",
-              company: "TestCompany1",
-              phone: "",
-              birthday: "",
-              token: "",
-            },
-            {
-              ID: 2,
-              CreatedAt: "2020-09-23T10:39:51+01:00",
-              UpdatedAt: "2020-09-23T10:39:51+01:00",
-              DeletedAt: null,
-              username: "usr2",
-              password: "dummyPswd",
-              email: "test@test.com",
-              role: "viewer",
-              company: "TestCompany2",
-              phone: "",
-              birthday: "",
-              token: "",
-            },
-          ],
-        },
-      }, */
 
 app.get('/api/users', (req, res) => {
   // res.setHeader('Content-Type', 'application/json');
@@ -437,7 +418,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "600MB",
       Frequency: "Daily",
-      Status: "Active",
+      Status: "Enabled",
     },
     {
       ID: 2,
@@ -447,7 +428,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Inactive",
+      Status: "Disabled",
     },
     {
       ID: 3,
@@ -457,7 +438,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Inactive",
+      Status: "Disabled",
     },
     {
       ID: 4,
@@ -467,7 +448,7 @@ app.get('/api/snapshots', (req,res) => {
       Timestamp: "12/02/2021, 08:00 (+2GMT)",
       Size: "500MB",
       Frequency: "Daily",
-      Status: "Active",
+      Status: "Enabled",
     },
   ])
 })
@@ -548,7 +529,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -598,7 +579,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -648,7 +629,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -698,7 +679,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -756,7 +737,7 @@ app.get('/saus/testNewCall', (req,res) => {
           "description": null
         }
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -806,7 +787,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -856,7 +837,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -906,7 +887,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -956,7 +937,7 @@ app.get('/saus/testNewCall', (req,res) => {
       "labels": [
 
       ],
-      "state": "open",
+      "status": "open",
       "locked": false,
       "assignee": null,
       "assignees": [
@@ -977,14 +958,3 @@ app.get('/saus/testNewCall', (req,res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-
-/* ID(pin):0
-CreatedAt(pin):"0001-01-01T00:00:00Z"
-UpdatedAt(pin):"0001-01-01T00:00:00Z"
-DeletedAt(pin):null
-username(pin):"sunlight"
-role(pin):"admin"
-company(pin):"sunlight"
-phone(pin):""
-birthday(pin):""
-token(pin):"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjF9.Vcp2grZ53t_OG3jwSXsRwfc_UUjboNgZarkAGiX0jgM" */
